@@ -113,6 +113,11 @@ int netlocscotch_get_mapping_from_comm_file(char *filename, int *pnum_processes,
 int netlocscotch_get_mapping_from_comm_matrix(double **comm, int num_vertices,
         netlocscotch_core_t **pcores);
 
+int netlocscotch_get_mapping_from_graph_topology_input(SCOTCH_Graph *graph,netloc_topology_t* netloc_topology,
+        netlocscotch_core_t **pcores);
+
+static int comm_matrix_to_scotch_graph(double **matrix, int n, SCOTCH_Graph *graph);
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
